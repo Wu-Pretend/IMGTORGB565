@@ -1,6 +1,6 @@
 import os
 import sys
-import Image
+from PIL import Image
 #The pilow library is required
 print("Please cut the picture to the size you want in advance!")
 fileName = input("Enter the file name (the file needs to be in the same directory):")
@@ -14,8 +14,7 @@ arrlen = hight * width *2
 with open("img.h","w") as headf:
 	print("#ifndef _IMG_H_",file = headf)
 	print("#define _IMG_H_",file = headf)
-	print("//The code is used for MCU of MCS-51 core. If it is used for MCU of other cores, please modify the code yourself",file = headf)
-	print("const unsigned char code gImage_img[];",file = headf)
+	print("const unsigned char gImage_img[];",file = headf)
 	print("#endif",file = headf)
 headf.close()
 with open("img.c","w") as f:
